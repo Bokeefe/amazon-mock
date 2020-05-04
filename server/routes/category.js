@@ -25,6 +25,7 @@ router.post('/category',
 // GET
 router.get('/categories',
     async (req, res) => {
+        console.log('GET CATEGORY')
         try {
             let categories = await Category.find()
 

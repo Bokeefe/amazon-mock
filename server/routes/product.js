@@ -78,7 +78,7 @@ router.get('/products',
     async (req, res) => {
         try {
             let products = await Product.find()
-
+            console.log(products)
             res.json({
                 status: true,
                 products: products
@@ -93,7 +93,6 @@ router.get('/products',
 
 // DELETE
 router.delete('/products/:id', async (req, res) => {
-    console.log('hitting here', req.params.id)
     try {
         let deletedProduct = await Product.findByIdAndDelete({
             _id: req.params.id
